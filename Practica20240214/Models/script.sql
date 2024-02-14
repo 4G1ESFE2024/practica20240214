@@ -8,14 +8,14 @@ GO
 
 -- Crear la tabla de tallas
 CREATE TABLE Tallas (
-    IdTalla INT PRIMARY KEY,
-    NombreTalla NVARCHAR(50)
+    IdTalla INT PRIMARY KEY IDENTITY(1,1),
+    NombreTalla NVARCHAR(50) NOT NULL
 );
 GO
 -- Crear la tabla de ropas
 CREATE TABLE Ropas (
-    IdRopa INT PRIMARY KEY,
-    NombreRopa NVARCHAR(100),
+    IdRopa INT PRIMARY KEY IDENTITY(1,1),
+    NombreRopa NVARCHAR(100) NOT NULL,
     TipoRopa NVARCHAR(50),
     IdTalla INT FOREIGN KEY REFERENCES Tallas(IdTalla)
 );
